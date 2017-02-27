@@ -26,7 +26,7 @@ body
                 |&nbsp;//&nbsp;
                 a(href='https://twitter.com/ladybenko') @ladybenko
             p.breathe Deck:<br>
-                a(href='https://belen-albeza.github.io/intro-gamedev') https://belen-albeza.github.io/intro-gamedev
+                a(href='https://belen-albeza.github.io/intro-gamedev-30') https://belen-albeza.github.io/intro-gamedev-30
         section.centered
             h1 I. Web tech
 
@@ -92,20 +92,12 @@ body
                     li Two steps each frame: #[strong update] and #[strong render]
                 li: img.figure(src='images/game_loop.svg')
         section
-            h1 Game states (I)
+            h1 Game states
             ul.cols
                 li: ul
                     li Each state represents a "screen" in the game (the main menu, a level…)
                     li They might be in a stack (for "modal" states) or in a FSM
                 li: img.figure(src='images/game_states_all.png')
-        section
-            h1 Game states (II)
-            ul.cols
-                li: ul
-                    li States might have a FSM in the inside to handle the different stages
-                li: img.figure(src='images/game_state.png')
-
-
 
         section.centered
             h1 Sprites
@@ -136,34 +128,8 @@ body
                     li There is interpolation
                     li More smooth… but may look odd if not combined with keyframes
                 li: img.figure(src='images/spine2d.jpg')
-
-        section
-            h1 Entities and the game world
-            ul.cols
-                li: ul
-                    li #[b Entities]: sprites, UI elements, particle systems, texts, etc.
-                    li They can be organised in a #[b tree structure] that represents the game world
-                    li If a tree, #[b hierarchical relationships] can be useful for handling entities relatively to a parent
-                li
-                    img.figure(src='images/game_tree.svg')
-                    p: small See #[a(href='https://lab.belenalbeza.com/games/ldjam-32/', target='_blank') #[i Metal vs Hipsters]]
-
-        section
-            h1 Sprite pools and recycling (I)
-            ul.cols
-                li: ul
-                    li It's useful to group similar sprites in #[strong lists] (f.ex: to check collisions between all the lasers and all the enemies)
-                    li Pools can be considered (or not) entities.
-        section
-            h1 Sprite pools and recycling (II)
-            ul.cols
-                li: ul
-                    li The problem: #[b performance issues] when creating and releasing sprites
-                    li Solution: don't release sprites, mark them as "zombies" and re-use them
-                li: img.figure(src='images/recycle.svg')
-
         section.centered
-            h1 Physics
+            h1 Physics &amp; collisions
         section
             h1 Old-school physics
             ul.cols
@@ -180,18 +146,8 @@ body
                     li They map game entities to physical bodies
                     li Easy to use, but hard to fine-tune
                 li: img.figure(src='images/physics.svg')
-
-        section.centered
-            h1 Collision detection
-
         section
-            h1 Pixel-perfect
-            ul.cols
-                li: ul
-                    li On a 2D graphic environment
-                    li Precise… at the expense of performance
-        section
-            h1 Bounding boxes
+            h1 Bounding boxes collisions
             ul.cols
                 li: ul
                     li Wrap the sprites in rects or circles and check for intersections
@@ -200,7 +156,7 @@ body
                     li Variants to support rotations: OBB, AABB
                 li: img.figure(src='images/bboxes.svg')
         section
-            h1 Polygon-based
+            h1 Polygon-based collisions
             ul.cols
                 li: ul
                     li Separating Axis Theorem
@@ -209,13 +165,6 @@ body
 
         section.centered
             h1 World and levels
-        section
-            h1 Scroll
-            ul.cols
-                li: ul
-                    li Your level can be bigger than the screen
-                    li Parallax effect (layers moving at different speed)
-                    li Camera to follow a character
         section
             h1 Grids
             ul.cols
@@ -243,14 +192,6 @@ body
                     li The trick: orthogonal perspective
                     li Graphics are rendered as textures into quads
                 li: img.figure(src='images/orthogonal_projection.png')
-        section
-            h1 Particles
-            ul.cols
-                li: ul
-                    li Very cool to create effects: explosions, smoke, halos, etc.
-                    li Can be as tiny as 1 pixel… (in classic games)
-                    li …or made up of tiny polygons (3D games)
-                li: img.figure(src='images/particles.jpg')
         section
             h1 Bitmap fonts
             ul.cols
